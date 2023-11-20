@@ -4,7 +4,7 @@ const Form = ({ handleSubmit, cityName }) => {
     return (
         <header>
             <div>
-                <form onSubmit={handleSubmit}>
+                <form className="search-form-container" onSubmit={handleSubmit}>
                     <input
                         type="text"
                         // value={cityName || ""}

@@ -18,6 +18,7 @@ body {
   padding: 0;
   background: url("images/clouds.jpg") no-repeat center center fixed;
   background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .app-container {
@@ -47,6 +48,29 @@ body {
   --font-size-4k-smaller: 4rem;
 }
 
+/* Form */
+
+.search-form-container {
+  display: flex;
+  justify-content: center;
+  gap: .2em;
+}
+
+input,
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+}
+
+input {
+  padding: .1em;
+  text-indent: .7em;
+}
+
+button {
+  padding: .2em .4em;
+}
+
 /* Content */
 
 .main-heading {
@@ -73,7 +97,9 @@ h3 {
     font-size: var(--font-size-small-laptop-small);
   }
 
-  h3 {
+  h3,
+  input,
+  button {
     font-size: var(--font-size-small-laptop-smaller);
   }
 }
@@ -88,7 +114,9 @@ h3 {
     font-size: var(--font-size-4k-small);
   }
 
-  h3 {
+  h3,
+  input,
+  button {
     font-size: var(--font-size-4k-smaller);
   }
 }
