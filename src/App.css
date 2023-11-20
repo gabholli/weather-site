@@ -4,24 +4,44 @@
   box-sizing: border-box;
 }
 
+/* html,
+body {
+  height: 100%;
+} */
+
 html {
   font-size: 16px;
 }
 
-html,
 body {
   margin: 0;
   padding: 0;
+
+}
+
+.app-container {
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
+  background-image: url("images/clouds.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1em;
 }
 
 :root {
   --font-size-main-heading: 2rem;
   --font-size-heading-small: 1.4rem;
   --font-size-heading-smaller: 1rem;
+
+  --font-size-small-laptop: 4rem;
+  --font-size-small-laptop-small: 2.8rem;
+  --font-size-small-laptop-smaller: 2rem;
 }
+
+/* Content */
 
 .main-heading {
   font-size: var(--font-size-main-heading);
@@ -33,4 +53,26 @@ h1 {
 
 h3 {
   font-size: var(--font-size-heading-smaller);
+}
+
+/* Media Queries */
+
+@media (min-width: 1024px) {
+  .main-heading {
+    font-size: var(--font-size-small-laptop);
+  }
+
+  h1 {
+    font-size: var(--font-size-small-laptop-small);
+  }
+
+  h3 {
+    font-size: var(--font-size-small-laptop-smaller);
+  }
+}
+
+@media (min-width: 2560px) {
+  .app-container {
+    height: 100vh;
+  }
 }
