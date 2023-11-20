@@ -97,9 +97,15 @@ h3 {
     font-size: var(--font-size-small-laptop-small);
   }
 
-  h3,
   input,
   button {
+    border-radius: 20px;
+  }
+
+  h3,
+  input,
+  button,
+  .no-result-text {
     font-size: var(--font-size-small-laptop-smaller);
   }
 }
@@ -114,9 +120,15 @@ h3 {
     font-size: var(--font-size-4k-small);
   }
 
-  h3,
   input,
   button {
+    border-radius: 40px;
+  }
+
+  h3,
+  input,
+  button,
+  .no-result-text {
     font-size: var(--font-size-4k-smaller);
   }
 }
