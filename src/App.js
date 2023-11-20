@@ -1,27 +1,61 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Layout from './components/Layout'
-import Description from './sections/Description'
-import Forecast from './sections/Forecast'
-import Home from './sections/Home'
-import Temperature from './sections/Temperature'
-import Wind from './sections/Wind'
-
+import { useState, useEffect } from 'react'
+import Form from "./components/Form"
+import Header from './components/Header';
 
 const App = () => {
+  const [weatherData, setWeatherData] = useState([])
+  const [cityName, setCityName] = useState("")
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setCityName(event.target.search.value)
+    console.log(cityName)
+  }
+
+  useEffect(() => {
+    fetch(`https://goweather.herokuapp.com/weather/${cityName}`)
+      .then(response => {
+        if (!response.ok) {
+          throw Error("Data not available")
+        }
+        return response.json()
+      })
+      .then(data => {
+        console.log(data)
+        setWeatherData(data)
+      })
+      .catch(error =>
+        console.error("Fetch error: ", error)
+      )
+
+  }, [cityName])
+
+  const threeDayForecast = weatherData.forecast?.map((day, index) => {
+    return (
+      <>
+        <p>Day: {day.day}</p>
+        <p>Temperature: {day.temperature}</p>
+        <p>Wind Speed: {day.wind}</p>
+      </>
+    )
+  })
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="desc" element={<Description />} />
-          <Route path="forecast" element={<Forecast />} />
-          <Route path="temp" element={<Temperature />} />
-          <Route path="wind" element={<Wind />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <Header />
+      <Form
+        handleSubmit={handleSubmit}
+      />
+      <div>
+        <h1>Description: {weatherData.description}</h1>
+        <h1>Three Day Forecast:</h1>
+        {threeDayForecast}
+        <h1>Current Temperature: {weatherData.temperature}</h1>
+        <h1>Current Wind Speed: {weatherData.wind}</h1>
+      </div>
+    </div>
+
   )
 }
 
