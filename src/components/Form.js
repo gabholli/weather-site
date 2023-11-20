@@ -1,17 +1,21 @@
 import React from "react"
 
-const Form = ({ handleSubmit }) => {
+const Form = ({ handleSubmit, cityName, handleChange }) => {
     return (
         <header>
             <div>
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Enter city name"
-                        name="cityName"
-                    ></input>
-                    <button>Search</button>
-                </form>
+                <input
+                    type="text"
+                    value={cityName.city}
+                    placeholder="Enter city name"
+                    name="city"
+                    onChange={handleChange}
+                ></input>
+                <button
+                    onClick={handleSubmit}
+                >
+                    Search
+                </button>
             </div>
         </header>
     )
