@@ -6,26 +6,16 @@ import Content from './components/Content';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState([])
-  const [cityName, setCityName] = useState({
-    city: ""
-  })
+  const [cityName, setCityName] = useState("")
 
-  const handleSubmit = () => {
-    setCityName(prevCity => ({
-      city: ""
-    }))
-  }
-
-  const handleChange = (event) => {
-    const { name, value } = event.target
-    setCityName(prevCity => ({
-      city: "",
-      [name]: value
-    }))
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setCityName(event.target.search.value)
+    console.log(cityName)
   }
 
   useEffect(() => {
-    fetch(`https://goweather.herokuapp.com/weather/sacramento`)
+    fetch(`https://goweather.herokuapp.com/weather/${cityName}`)
       .then(response => {
         if (!response.ok) {
           throw Error("Data not available")
@@ -49,8 +39,6 @@ const App = () => {
       <Header />
       <Form
         handleSubmit={handleSubmit}
-        handleChange={handleChange}
-        cityName={cityName.city}
       />
       <Content
         weatherData={weatherData}
