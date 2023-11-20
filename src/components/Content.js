@@ -2,13 +2,13 @@ import React from "react"
 
 const Content = ({ weatherData }) => {
 
-    const threeDayForecast = weatherData.forecast?.map(day => {
+    const threeDayForecast = weatherData.forecast?.map((day, index) => {
         return (
-            <>
+            <div key={index}>
                 <h3>Day: {day.day}</h3>
                 <h3>Temperature: {day.temperature}</h3>
                 <h3>Wind Speed: {day.wind}</h3>
-            </>
+            </div>
         )
     })
 
