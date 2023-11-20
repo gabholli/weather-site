@@ -1,7 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import Form from "./components/Form"
-import Header from './components/Header';
+import Header from './components/Header'
+import Content from './components/Content';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState([])
@@ -31,15 +32,7 @@ const App = () => {
 
   }, [cityName])
 
-  const threeDayForecast = weatherData.forecast?.map((day, index) => {
-    return (
-      <>
-        <p>Day: {day.day}</p>
-        <p>Temperature: {day.temperature}</p>
-        <p>Wind Speed: {day.wind}</p>
-      </>
-    )
-  })
+
 
   return (
     <div>
@@ -47,15 +40,10 @@ const App = () => {
       <Form
         handleSubmit={handleSubmit}
       />
-      <div>
-        <h1>Description: {weatherData.description}</h1>
-        <h1>Three Day Forecast:</h1>
-        {threeDayForecast}
-        <h1>Current Temperature: {weatherData.temperature}</h1>
-        <h1>Current Wind Speed: {weatherData.wind}</h1>
-      </div>
+      <Content
+        weatherData={weatherData}
+      />
     </div>
-
   )
 }
 

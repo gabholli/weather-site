@@ -12,12 +12,25 @@ html,
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 :root {
-  --font-size-heading: 1.8rem;
+  --font-size-main-heading: 2rem;
+  --font-size-heading-small: 1.4rem;
+  --font-size-heading-smaller: 1rem;
+}
+
+.main-heading {
+  font-size: var(--font-size-main-heading);
 }
 
 h1 {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-heading-small);
+}
+
+h3 {
+  font-size: var(--font-size-heading-smaller);
 }

@@ -8,7 +8,7 @@ const Form = ({ handleSubmit }) => {
                     <input
                         type="text"
                         placeholder="Enter city name"
-                        name="search"
+                        name="cityName"
                     ></input>
                     <button>Search</button>
                 </form>
