@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 
-/* html,
+html,
 body {
   height: 100%;
-} */
+}
 
 html {
   font-size: 16px;
@@ -16,7 +16,10 @@ html {
 body {
   margin: 0;
   padding: 0;
-
+  background-image: url("images/clouds.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .app-container {
@@ -24,10 +27,6 @@ body {
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  background-image: url("images/clouds.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   padding: 1em;
 }
 
@@ -58,6 +57,10 @@ h3 {
 /* Media Queries */
 
 @media (min-width: 1024px) {
+  .app-container {
+    height: 100vh;
+  }
+
   .main-heading {
     font-size: var(--font-size-small-laptop);
   }
@@ -71,8 +74,4 @@ h3 {
   }
 }
 
-@media (min-width: 2560px) {
-  .app-container {
-    height: 100vh;
-  }
-}
+@media (min-width: 2560px) {}
