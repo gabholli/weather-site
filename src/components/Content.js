@@ -6,8 +6,8 @@ const Content = ({ weatherData }) => {
         return (
             <div key={index}>
                 <h3>Day: {day.day}</h3>
-                <h3>Temperature: {day.temperature}</h3>
-                <h3>Wind Speed: {day.wind}</h3>
+                <p>Temperature: {day.temperature}</p>
+                <p>Wind Speed: {day.wind}</p>
             </div>
         )
     })

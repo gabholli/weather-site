@@ -34,18 +34,23 @@ body {
   --font-size-main-heading: 2rem;
   --font-size-heading-small: 1.4rem;
   --font-size-heading-smaller: 1rem;
+  --font-size-heading-smallest: .9rem;
 
   /* Small laptop and above font sizes */
 
   --font-size-small-laptop: 4rem;
   --font-size-small-laptop-small: 2.8rem;
   --font-size-small-laptop-smaller: 2rem;
+  --font-size-small-laptop-smallest: 1.5rem;
+
 
   /* 4k font sizes */
 
   --font-size-4k: 8rem;
   --font-size-4k-small: 5.6rem;
   --font-size-4k-smaller: 4rem;
+  --font-size-4k-smallest: 3rem;
+
 }
 
 /* Form */
@@ -85,6 +90,10 @@ h3 {
   font-size: var(--font-size-heading-smaller);
 }
 
+p {
+  font-size: var(--font-size-heading-smallest);
+}
+
 /* Media Queries */
 
 @media (min-width: 1024px) {
@@ -108,6 +117,10 @@ h3 {
   .no-result-text {
     font-size: var(--font-size-small-laptop-smaller);
   }
+
+  p {
+    font-size: var(--font-size-small-laptop-smallest);
+  }
 }
 
 @media (min-width: 2560px) {
@@ -130,5 +143,9 @@ h3 {
   button,
   .no-result-text {
     font-size: var(--font-size-4k-smaller);
+  }
+
+  p {
+    font-size: var(--font-size-4k-smallest);
   }
 }
