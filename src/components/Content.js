@@ -1,6 +1,6 @@
 import React from "react"
 
-const Content = ({ weatherData }) => {
+const Content = ({ weatherData, dataFound }) => {
 
     const threeDayForecast = weatherData.forecast?.map((day, index) => {
         return (

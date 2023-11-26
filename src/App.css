@@ -61,6 +61,7 @@ body {
 
   --beige-color: #F8FAF7;
   --dark-gray-color: #B2BBC1;
+  --off-white-color: #E4EBEC;
 
 }
 
@@ -86,6 +87,11 @@ input {
 
 button {
   padding: .2em .4em;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: var(--off-white-color);
 }
 
 /* Content */
