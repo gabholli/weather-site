@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 html {
   font-size: 16px;
 }
@@ -21,6 +16,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .app-container {
@@ -29,9 +25,14 @@ body {
   text-align: center;
   flex-direction: column;
   padding: 2em;
-  background-color: var(--dark-gray-color);
+  background: var(--dark-gray-color) no-repeat center center fixed;
+  background-size: cover;
   max-width: 1200px;
   opacity: 0.9;
+  /* min-height: 100vh; */
+  border: 3px solid var(--beige-color);
+  border-radius: 25px;
+  margin: 1em;
 }
 
 :root {
