@@ -15,7 +15,7 @@ const Content = ({ weatherData }) => {
     return (
         <>
             {weatherData.description ?
-                (<div className="text-center flex flex-col gap-4 font-bold">
+                (<div className="text-center flex flex-col gap-4 font-bold text-2xl">
                     <h1>Description: {weatherData.description}</h1>
                     <h1>Three Day Forecast:</h1>
                     {threeDayForecast}

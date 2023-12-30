@@ -4,9 +4,10 @@ const Form = ({ handleSubmit }) => {
     return (
         <header>
             <div>
-                <form className="flex gap-6" onSubmit={handleSubmit}>
+                <form className="flex flex-col md:flex-row gap-6" onSubmit={handleSubmit}>
                     <input
-                        className="px-2 py-1 md:px-4 md:py-2 text-sm rounded border-gray-800 border-2"
+                        className="px-2 py-1 md:px-4 md:py-2 text-sm text-center md:text-left 
+                            rounded border-gray-800 border-2"
                         type="text"
                         // value={cityName || ""}
                         placeholder="Enter city name"
