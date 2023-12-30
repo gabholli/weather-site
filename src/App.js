@@ -35,7 +35,7 @@ const App = () => {
 
 
   return (
-    <div className="app-container">
+    <div className="bg-blue-800 w-screen">
       <Header />
       <Form
         handleSubmit={handleSubmit}
