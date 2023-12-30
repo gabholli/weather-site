@@ -5,9 +5,9 @@ const Content = ({ weatherData }) => {
     const threeDayForecast = weatherData.forecast?.map((day, index) => {
         return (
             <div key={index}>
-                <h3>Day: {day.day}</h3>
-                <p>Temperature: {day.temperature}</p>
-                <p>Wind Speed: {day.wind}</p>
+                <h2 className="text-xl">Day: {day.day}</h2>
+                <p className="text-lg font-normal">Temperature: {day.temperature}</p>
+                <p className="text-lg font-normal">Wind Speed: {day.wind}</p>
             </div>
         )
     })
@@ -15,7 +15,7 @@ const Content = ({ weatherData }) => {
     return (
         <>
             {weatherData.description ?
-                (<div>
+                (<div className="text-center flex flex-col gap-4 font-bold">
                     <h1>Description: {weatherData.description}</h1>
                     <h1>Three Day Forecast:</h1>
                     {threeDayForecast}
