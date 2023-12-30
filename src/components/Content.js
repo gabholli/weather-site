@@ -1,6 +1,6 @@
 import React from "react"
 
-const Content = ({ weatherData, dataFound }) => {
+const Content = ({ weatherData }) => {
 
     const threeDayForecast = weatherData.forecast?.map((day, index) => {
         return (
@@ -15,14 +15,14 @@ const Content = ({ weatherData, dataFound }) => {
     return (
         <>
             {weatherData.description ?
-                <div>
+                (<div>
                     <h1>Description: {weatherData.description}</h1>
                     <h1>Three Day Forecast:</h1>
                     {threeDayForecast}
                     <h1>Current Temperature: {weatherData.temperature}</h1>
                     <h1>Current Wind Speed: {weatherData.wind}</h1>
-                </div>
-                : <p className="no-result-text">No data...</p>}
+                </div>)
+                : <p className="text-2xl">No data...</p>}
         </>
     )
 }
