@@ -22,7 +22,7 @@ const Content = ({ weatherData }) => {
                     <h1>Current Temperature: {weatherData.temperature}</h1>
                     <h1>Current Wind Speed: {weatherData.wind}</h1>
                 </div>)
-                : <p className="text-2xl font-bold">No data yet...</p>}
+                : <p className="text-2xl font-medium">No data yet...</p>}
         </>
     )
 }
